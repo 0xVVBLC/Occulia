@@ -94,7 +94,13 @@ local function DrawESP(plr)
     local function UpdaterR15()
         local connection
         connection = game:GetService("RunService").RenderStepped:Connect(function()
-            if plr.Character ~= nil and plr.Character:FindFirstChild("Humanoid") ~= nil and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil and plr.Character.Humanoid.Health > 0 and config.enabled and (teamcheck and plr.Team ~= Player.Team) then
+            if plr.Character ~= nil 
+   and plr.Character:FindFirstChild("Humanoid") ~= nil 
+   and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil 
+   and plr.Character.Humanoid.Health > 0 
+   and config.enabled 
+   and (not config.teamcheck or plr.Team ~= Player.Team) then
+ then
                 local HUM, vis = Camera:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
                 if vis then
                     -- Head
@@ -200,7 +206,13 @@ end
     local function UpdaterR6()
         local connection
         connection = game:GetService("RunService").RenderStepped:Connect(function()
-            if plr.Character ~= nil and plr.Character:FindFirstChild("Humanoid") ~= nil and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil and plr.Character.Humanoid.Health > 0 and config.enabled then
+           if plr.Character ~= nil 
+   and plr.Character:FindFirstChild("Humanoid") ~= nil 
+   and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil 
+   and plr.Character.Humanoid.Health > 0 
+   and config.enabled 
+   and (not config.teamcheck or plr.Team ~= Player.Team) then
+
                 local HUM, vis = Camera:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
                 if vis then
                     local H = Camera:WorldToViewportPoint(plr.Character.Head.Position)
