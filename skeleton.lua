@@ -100,7 +100,6 @@ local function DrawESP(plr)
    and plr.Character.Humanoid.Health > 0 
    and config.enabled 
    and (not config.teamcheck or plr.Team ~= Player.Team) then
- then
                 local HUM, vis = Camera:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
                 if vis then
                     -- Head
