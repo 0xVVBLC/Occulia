@@ -7,7 +7,7 @@ local Camera = game:GetService("Workspace").CurrentCamera
 config = {
     enabled   = true;
     thickness = 1;
-    teamcheck = true
+    teamcheck = true;
     color     =
         {
         UseTeamColor = true;
