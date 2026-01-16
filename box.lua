@@ -177,4 +177,11 @@ game.Players.PlayerAdded:Connect(function(newplr)
     end
 end)
 
-return {Settings, Team_Check, TeamColor}
+return {
+    Settings = Settings,
+    TeamCheck = Team_Check,
+    TeamColor = TeamColor,
+    -- maybe add useful functions later:
+    -- Toggle = function() Settings.Enabled = not Settings.Enabled end,
+    -- Destroy = function() -- cleanup all drawings end
+}
