@@ -1,7 +1,7 @@
 -- Made by Blissful#4992
 --modded by 0xVVBLC
 local Settings = {
-    Enabled = true
+    Enabled = true,
     Box_Color = Color3.fromRGB(255, 0, 0),
     Tracer_Color = Color3.fromRGB(255, 0, 0),
     Tracer_Thickness = 1,
