@@ -186,6 +186,14 @@ end
     end)
 
     ESP_Objects[player] = box
+
+    -- HealthBar
+box.HealthBar.Visible = Settings.HealthBar and humanoid.Health > 0
+box.HealthBarBG.Visible = Settings.HealthBar and humanoid.Health > 0
+
+-- Flags
+box.InfoFlags.Visible = Settings.Flags and humanoid.Health > 0
+
 end
 
 local function removeESP(player)
