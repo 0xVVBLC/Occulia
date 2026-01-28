@@ -143,40 +143,46 @@ local function createESP(player)
             end
         end
 
-        if Settings.HealthBar then
-            local healthPct = humanoid.Health / humanoid.MaxHealth
+    if Settings.HealthBar then
+    local healthPct = humanoid.Health / humanoid.MaxHealth
 
-            box.HealthBarBG.From = Vector2.new(minX - 6, minY)
-            box.HealthBarBG.To = Vector2.new(minX - 6, maxY)
+    box.HealthBarBG.From = Vector2.new(minX - 6, minY)
+    box.HealthBarBG.To = Vector2.new(minX - 6, maxY)
 
-            box.HealthBar.From = Vector2.new(minX - 6, maxY)
-            box.HealthBar.To = Vector2.new(minX - 6, maxY - (height * healthPct))
-            box.HealthBar.Color = Color3.fromHSV(healthPct * 0.3, 1, 1)
+    box.HealthBar.From = Vector2.new(minX - 6, maxY)
+    box.HealthBar.To = Vector2.new(minX - 6, maxY - (height * healthPct))
+    box.HealthBar.Color = Color3.fromHSV(healthPct * 0.3, 1, 1)
 
-            box.HealthBar.Visible = true
-            box.HealthBarBG.Visible = true
-        end
+    box.HealthBar.Visible = true
+    box.HealthBarBG.Visible = true
+else
+    box.HealthBar.Visible = false
+    box.HealthBarBG.Visible = false
+end
 
-        if Settings.Flags then
-            local tool = character:FindFirstChildOfClass("Tool")
-            local distance = (Camera.CFrame.Position - root.Position).Magnitude
+if Settings.Flags then
+    local tool = character:FindFirstChildOfClass("Tool")
+    local distance = (Camera.CFrame.Position - root.Position).Magnitude
 
-            box.InfoFlags.Size = scaledTextSize
-            box.InfoFlags.Position = Vector2.new(
-                maxX + (scaledTextSize * 0.4),
-                minY
-            )
+    box.InfoFlags.Size = scaledTextSize
+    box.InfoFlags.Position = Vector2.new(
+        maxX + (scaledTextSize * 0.4),
+        minY
+    )
 
-            box.InfoFlags.Text = string.format(
-                "%s\nHP: %d\n[%s]\n%dm",
-                player.Name,
-                math.floor(humanoid.Health),
-                tool and tool.Name or "Fists",
-                math.floor(distance)
-            )
+    box.InfoFlags.Text = string.format(
+        "%s\nHP: %d\n[%s]\n%dm",
+        player.Name,
+        math.floor(humanoid.Health),
+        tool and tool.Name or "Fists",
+        math.floor(distance)
+    )
 
-            box.InfoFlags.Visible = true
-        end
+    box.InfoFlags.Visible = true
+else
+    box.InfoFlags.Visible = false
+end
+
     end)
 
     ESP_Objects[player] = box
